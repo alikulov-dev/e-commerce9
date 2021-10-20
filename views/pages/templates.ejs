@@ -1,0 +1,703 @@
+<!-- Page title -->
+<div class="text-center lg:px-20 mb-10 lg:mb-24">
+  <h1 class="mt-10 lg:mt-20 xl:mt-40 mb-8 text-2xl lg:text-6xl leading-none text-gray-800 font-bold">Ready-to-use
+    templates for your next project</h1>
+  <p class="mb-10 text-xl lg:text-2xl leading-8 text-gray-500">Free templates that are perfect starter layouts for your
+    next web based project.</p>
+</div>
+<!-- Tab Menu -->
+<section>
+  <div class="flex flex-col lg:flex-row justify-between items-center">
+    <div class="relative">
+      <button
+        class="inline-flex items-center justify-between bg-white px-7 py-3 shadow rounded-md text-base leading-6 font-medium transition-colors duration-150"
+        @click="toggleMobileSnippets" aria-haspopup="true">
+        <span class="mr-5 text-xs sm:text-lg">Newest</span>
+        <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.6667 6L8.00004 10.6667L3.33337 6" stroke="#6B7280" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+      <template x-if="isMobileSnippetsOpen">
+        <ul x-transition:enter="transition-all ease-in-out duration-300" x-transition:enter-start="opacity-25 max-h-0"
+          x-transition:enter-end="opacity-100 max-h-xl" x-transition:leave="transition-all ease-in-out duration-300"
+          x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0" class="absolute w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md
+            shadow-md dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700 text-xs sm:text-lg"
+          aria-label="submenu">
+          <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+            <a class="block" href="pages/login.html">Dashboards</a>
+          </li>
+          <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+            <a class="block" href="pages/create-account.html">
+              Ecommerce
+            </a>
+          </li>
+          <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+            <a class="block" href="pages/forgot-password.html">
+              News
+            </a>
+          </li>
+          <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+            <a class="block" href="pages/404.html"> Landing pages</a>
+          </li>
+          <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+            <a class="block" href="pages/blank.html">Listing</a>
+          </li>
+        </ul>
+      </template>
+    </div>
+    <ul class="flex justify-center items-center my-4 text-lg leading-7 font-medium">
+      <template x-for="(tab, index) in themeTabs" :key="themeTabs">
+        <li
+          class="cursor-pointer text-xs sm:text-lg py-2 px-1 xl:py-3 xl:px-10 text-center text-gray-500 border-b-2 border-transparent"
+          :class="activeTab===index ? 'text-indigo-500 border-indigo-500' : ''" @click="activeTab = index" x-text="tab">
+        </li>
+      </template>
+    </ul>
+    <ul class="flex gap-x-5">
+      <li>
+        <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+          <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+              fill="url(#paint0_linear)" />
+            <defs>
+              <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                gradientunits="userSpaceOnUse">
+                <stop stop-color="#2298BD" />
+                <stop offset="1" stop-color="#0ED7B5" />
+              </lineargradient>
+            </defs>
+          </svg>
+
+        </a>
+      </li>
+      <li>
+        <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+          <svg width="27" height="22" viewbox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M5.91718 0.203583C4.45648 0.203583 3.37563 1.55742 3.42403 3.02561C3.47048 4.43615 3.41013 6.263 2.97583 7.7528C2.53998 9.24679 1.80338 10.1935 0.599976 10.315V11.687C1.80338 11.8087 2.53998 12.755 2.97578 14.2492C3.41013 15.739 3.47043 17.5658 3.42398 18.9764C3.37558 20.4444 4.45643 21.7984 5.91738 21.7984H20.8847C22.3454 21.7984 23.4261 20.4446 23.3777 18.9764C23.3312 17.5658 23.3916 15.739 23.8259 14.2492C24.2617 12.755 24.9965 11.8084 26.2 11.687V10.315C24.9966 10.1933 24.2618 9.247 23.8259 7.7528C23.3915 6.26322 23.3312 4.43615 23.3777 3.02561C23.4261 1.55763 22.3454 0.203583 20.8847 0.203583H5.91698H5.91718ZM17.9559 13.4966C17.9559 15.5183 16.5319 16.7443 14.1686 16.7443H10.1457C10.0306 16.7443 9.92028 16.6959 9.83891 16.6098C9.75754 16.5236 9.71183 16.4067 9.71183 16.2849V5.71718C9.71183 5.59533 9.75754 5.47846 9.83891 5.39229C9.92028 5.30612 10.0306 5.25772 10.1457 5.25772H14.1457C16.1163 5.25772 17.4095 6.38801 17.4095 8.12337C17.4095 9.3414 16.5395 10.4318 15.4312 10.6229V10.6864C16.94 10.8616 17.9559 11.9682 17.9559 13.4966ZM13.73 6.71421H11.4362V10.1451H13.3681C14.8616 10.1451 15.6851 9.50829 15.6851 8.37C15.685 7.30324 14.977 6.71421 13.73 6.71421ZM11.4362 11.5064V15.2874H13.8144C15.3694 15.2874 16.193 14.6266 16.193 13.385C16.193 12.1433 15.3463 11.5062 13.7144 11.5062H11.4362V11.5064Z"
+              fill="#7952B3" />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="pt-5 lg:pt-24">
+    <div class="grid gap-7 sm:grid-cols-2  lg:grid-cols-3" x-show="activeTab===0">
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-7 sm:grid-cols-2  lg:grid-cols-3" x-show="activeTab===1">
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-7 sm:grid-cols-2  lg:grid-cols-3" x-show="activeTab===2">
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-7 sm:grid-cols-2  lg:grid-cols-3" x-show="activeTab===3">
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-7 sm:grid-cols-2  lg:grid-cols-3" x-show="activeTab===4">
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/template.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+              <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+                  fill="url(#paint0_linear)" />
+                <defs>
+                  <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                    gradientunits="userSpaceOnUse">
+                    <stop stop-color="#2298BD" />
+                    <stop offset="1" stop-color="#0ED7B5" />
+                  </lineargradient>
+                </defs>
+              </svg>
+
+            </a>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="flex justify-between my-12 border-t-2 border-gray-200x text-sm text-gray-500 leading-5 font-medium">
+  <div class="mr-1 flex justify-center items-center gap-2 cursor-pointer">
+    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M7.70711 14.7071C7.31658 15.0976 6.68342 15.0976 6.2929 14.7071L2.29289 10.7071C1.90237 10.3166 1.90237 9.68342 2.29289 9.29289L6.29289 5.29289C6.68342 4.90237 7.31658 4.90237 7.70711 5.29289C8.09763 5.68342 8.09763 6.31658 7.70711 6.70711L5.41421 9L17 9C17.5523 9 18 9.44771 18 10C18 10.5523 17.5523 11 17 11L5.41421 11L7.70711 13.2929C8.09763 13.6834 8.09763 14.3166 7.70711 14.7071Z"
+        fill="#9CA3AF" />
+    </svg>
+    Previous
+  </div>
+  <div class="flex h-8 font-medium -m-0.5">
+    <div
+      class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2 border-transparent">
+      1</div>
+    <div
+      class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2 border-indigo-500">
+      2</div>
+    <div
+      class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2 border-transparent">
+      3</div>
+    <div
+      class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2 border-transparent">
+      ...</div>
+    <div
+      class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2 border-transparent">
+      8</div>
+    <div
+      class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2 border-transparent">
+      9</div>
+    <div
+      class="w-8 md:flex justify-center items-center hidden  cursor-pointer leading-5 transition duration-150 ease-in  border-t-2 border-transparent">
+      10</div>
+    <div
+      class="w-8 h-8 md:hidden flex justify-center items-center cursor-pointer leading-5 transition duration-150 ease-in border-t-2 border-indigo-500">
+      2</div>
+  </div>
+  <div class="ml-1 flex justify-center items-center gap-2 cursor-pointer">
+    Next
+    <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M12.2929 5.29289C12.6834 4.90237 13.3166 4.90237 13.7071 5.29289L17.7071 9.29289C18.0976 9.68342 18.0976 10.3166 17.7071 10.7071L13.7071 14.7071C13.3166 15.0976 12.6834 15.0976 12.2929 14.7071C11.9024 14.3166 11.9024 13.6834 12.2929 13.2929L14.5858 11H3C2.44772 11 2 10.5523 2 10C2 9.44772 2.44772 9 3 9H14.5858L12.2929 6.70711C11.9024 6.31658 11.9024 5.68342 12.2929 5.29289Z"
+        fill="#9CA3AF" />
+    </svg>
+  </div>
+</div>

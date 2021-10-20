@@ -1,0 +1,467 @@
+<!-- Page title -->
+<div class="text-center lg:px-20 mb-10 lg:mb-24">
+  <h1 class="mt-10 lg:mt-20 xl:mt-40 mb-8 text-2xl lg:text-6xl leading-none text-gray-800 font-bold">UMDSOFT dan test uchun project</h1>
+  <p class="mb-10 text-xl lg:text-2xl leading-8 text-gray-500">Beautifully designed Themes, Templates and practical
+    Snippets. Save
+    weeks
+    of
+    time and build your web-site interface
+    in minutes.</p>
+  <a class="inline-block text-base leading-6 text-gray-500 font-medium py-3 rounded-md shadow px-10 bg-white"
+    href="##">Explore
+    now</a>
+</div>
+<!-- Tab Menu -->
+<section>
+  <div class="flex flex-col md:flex-row justify-between items-center">
+    <div class="relative">
+      <button
+        class="inline-flex items-center justify-between bg-white px-7 py-3 shadow rounded-md text-base leading-6 font-medium transition-colors duration-150"
+        @click="toggleMobileSnippets" aria-haspopup="true">
+        <span class="mr-5 text-xs sm:text-lg">Newest</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.6667 6L8.00004 10.6667L3.33337 6" stroke="#6B7280" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
+      <template x-if="isMobileSnippetsOpen">
+        <ul x-transition:enter="transition-all ease-in-out duration-300" x-transition:enter-start="opacity-25 max-h-0"
+          x-transition:enter-end="opacity-100 max-h-xl" x-transition:leave="transition-all ease-in-out duration-300"
+          x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0" class="absolute w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md
+            shadow-md dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700 text-xs sm:text-lg"
+          aria-label="submenu">
+          <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+            <a class="block" href="pages/login.html">Dashboards</a>
+          </li>
+          <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+            <a class="block" href="pages/create-account.html">
+              Ecommerce
+            </a>
+          </li>
+          <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+            <a class="block" href="pages/forgot-password.html">
+              News
+            </a>
+          </li>
+          <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+            <a class="block" href="pages/404.html"> Landing pages</a>
+          </li>
+          <li class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+            <a class="block" href="pages/blank.html">Listing</a>
+          </li>
+        </ul>
+      </template>
+    </div>
+    <ul class="flex justify-center items-center my-4 text-lg leading-7 font-medium">
+      <template x-for="(tab, index) in homeTabs" :key="homeTabs">
+        <li
+          class="cursor-pointer text-xs sm:text-lg py-2 px-2 xl:py-3 xl:px-10 text-center text-gray-500 border-b-2 border-transparent"
+          :class="activeTab===index ? 'text-indigo-500 border-indigo-500' : ''" @click="activeTab = index" x-text="tab">
+        </li>
+      </template>
+    </ul>
+    <ul class="flex gap-x-5">
+      <li>
+        <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##"> <svg width="17"
+            height="24" viewbox="0 0 17 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0)">
+              <path
+                d="M4.40081 23.1565C6.60837 23.1565 8.40001 21.4424 8.40001 19.3304V15.5043H4.40081C2.19325 15.5043 0.401611 17.2184 0.401611 19.3304C0.401611 21.4424 2.19325 23.1565 4.40081 23.1565Z"
+                fill="#0ACF83" />
+              <path
+                d="M0.401611 11.6783C0.401611 9.56626 2.19325 7.85217 4.40081 7.85217H8.40001V15.5043H4.40081C2.19325 15.5043 0.401611 13.7903 0.401611 11.6783Z"
+                fill="#A259FF" />
+              <path
+                d="M0.402954 4.02608C0.402954 1.91408 2.1946 0.199997 4.40215 0.199997H8.40135V7.85217H4.40215C2.1946 7.85217 0.402954 6.13808 0.402954 4.02608Z"
+                fill="#F24E1E" />
+              <path
+                d="M8.40002 0.199997H12.3992C14.6068 0.199997 16.3984 1.91408 16.3984 4.02608C16.3984 6.13808 14.6068 7.85217 12.3992 7.85217H8.40002V0.199997Z"
+                fill="#FF7262" />
+              <path
+                d="M16.3984 11.6783C16.3984 13.7903 14.6068 15.5043 12.3992 15.5043C10.1917 15.5043 8.40002 13.7903 8.40002 11.6783C8.40002 9.56626 10.1917 7.85217 12.3992 7.85217C14.6068 7.85217 16.3984 9.56626 16.3984 11.6783Z"
+                fill="#1ABCFE" />
+            </g>
+            <defs>
+              <clippath id="clip0">
+                <rect width="16" height="22.9565" fill="white" transform="translate(0.400024 0.199997)" />
+              </clippath>
+            </defs>
+          </svg></a>
+      </li>
+      <li>
+        <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+          <svg width="31" height="20" viewbox="0 0 31 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M15.4 0.824478C11.3467 0.824478 8.81331 2.86353 7.80001 6.9415C9.32001 4.90245 11.0933 4.13782 13.12 4.64762C14.2763 4.93841 15.1028 5.78249 16.0176 6.71665C17.5079 8.23862 19.2327 10 23 10C27.0533 10 29.5867 7.96096 30.6 3.88299C29.08 5.92204 27.3067 6.68666 25.28 6.17687C24.1237 5.88607 23.2972 5.042 22.3824 4.10784C20.8921 2.58587 19.1674 0.824478 15.4 0.824478ZM7.80001 10C3.74672 10 1.21331 12.0391 0.200012 16.117C1.72001 14.078 3.49331 13.3134 5.52001 13.8231C6.67628 14.1139 7.50278 14.958 8.41763 15.8922C9.90794 17.4142 11.6327 19.1755 15.4 19.1755C19.4533 19.1755 21.9867 17.1365 23 13.0585C21.48 15.0976 19.7067 15.8622 17.68 15.3524C16.5237 15.0616 15.6972 14.2175 14.7824 13.2834C13.2921 11.7614 11.5674 10 7.80001 10Z"
+              fill="url(#paint0_linear)" />
+            <defs>
+              <lineargradient id="paint0_linear" x1="-0.6445" y1="6.69682" x2="25.6902" y2="21.789"
+                gradientunits="userSpaceOnUse">
+                <stop stop-color="#2298BD" />
+                <stop offset="1" stop-color="#0ED7B5" />
+              </lineargradient>
+            </defs>
+          </svg>
+
+        </a>
+      </li>
+      <li>
+        <a class="rounded-full w-12 h-12 flex justify-center items-center bg-white shadow-md" href="##">
+          <svg width="27" height="22" viewbox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M5.91718 0.203583C4.45648 0.203583 3.37563 1.55742 3.42403 3.02561C3.47048 4.43615 3.41013 6.263 2.97583 7.7528C2.53998 9.24679 1.80338 10.1935 0.599976 10.315V11.687C1.80338 11.8087 2.53998 12.755 2.97578 14.2492C3.41013 15.739 3.47043 17.5658 3.42398 18.9764C3.37558 20.4444 4.45643 21.7984 5.91738 21.7984H20.8847C22.3454 21.7984 23.4261 20.4446 23.3777 18.9764C23.3312 17.5658 23.3916 15.739 23.8259 14.2492C24.2617 12.755 24.9965 11.8084 26.2 11.687V10.315C24.9966 10.1933 24.2618 9.247 23.8259 7.7528C23.3915 6.26322 23.3312 4.43615 23.3777 3.02561C23.4261 1.55763 22.3454 0.203583 20.8847 0.203583H5.91698H5.91718ZM17.9559 13.4966C17.9559 15.5183 16.5319 16.7443 14.1686 16.7443H10.1457C10.0306 16.7443 9.92028 16.6959 9.83891 16.6098C9.75754 16.5236 9.71183 16.4067 9.71183 16.2849V5.71718C9.71183 5.59533 9.75754 5.47846 9.83891 5.39229C9.92028 5.30612 10.0306 5.25772 10.1457 5.25772H14.1457C16.1163 5.25772 17.4095 6.38801 17.4095 8.12337C17.4095 9.3414 16.5395 10.4318 15.4312 10.6229V10.6864C16.94 10.8616 17.9559 11.9682 17.9559 13.4966ZM13.73 6.71421H11.4362V10.1451H13.3681C14.8616 10.1451 15.6851 9.50829 15.6851 8.37C15.685 7.30324 14.977 6.71421 13.73 6.71421ZM11.4362 11.5064V15.2874H13.8144C15.3694 15.2874 16.193 14.6266 16.193 13.385C16.193 12.1433 15.3463 11.5062 13.7144 11.5062H11.4362V11.5064Z"
+              fill="#7952B3" />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="pt-5 lg:pt-24">
+    <div class="grid gap-7 sm:grid-cols-2  lg:grid-cols-3" x-show="activeTab===0">
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-7 sm:grid-cols-2  lg:grid-cols-3" x-show="activeTab===1">
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-7 sm:grid-cols-2  lg:grid-cols-3" x-show="activeTab===2">
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-7 sm:grid-cols-2  lg:grid-cols-3" x-show="activeTab===3">
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-7 sm:grid-cols-2  lg:grid-cols-3" x-show="activeTab===4">
+      <div class="col rounded-xl overflow-hidden">
+        <img class="max-w-none w-full" src="/assets/img/product.png" alt="Product Title">
+        <div class="p-4 bg-white">
+          <a href="##">
+            <h3 class="mb-3 text-xl text-gray-800 leading-7 font-medium">Birdfiy - Multipurpose Landing Page Template
+            </h3>
+            <p class="mb-5 text-xs text-gray-500 leading-4 font-normal">Build your landing page in a minutes</p>
+          </a>
+          <div class="flex justify-between">
+            <span class="text-2xl text-gray-800 leading-8 font-medium">$49</span>
+            <button class="flex items-center px-2 py-1 rounded-lg gap-x-3 bg-gray-100" type="button">
+              <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.87868 4.21199C1.70711 5.38357 1.70711 7.28306 2.87868 8.45463L8.00004 13.576L13.1213 8.45463C14.2929 7.28306 14.2929 5.38357 13.1213 4.21199C11.9497 3.04042 10.0503 3.04042 8.87868 4.21199L8.00004 5.09071L7.12132 4.21199C5.94975 3.04042 4.05025 3.04042 2.87868 4.21199Z"
+                  stroke="#9CA3AF" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="text-sm text-gray-400 leading-5 font-normal">789</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

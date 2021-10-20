@@ -1,0 +1,482 @@
+<!doctype html>
+<html x-data="data()" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elegant Goodies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="/assets/css/admin-tailwind.css" /> -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="/assets/js/init-alpine.js"></script>
+</head>
+
+<body class="bg-blue-50 text-inter">
+    <div class="container mx-auto px-3 md:px-1 lg:px-12 nav--padding">
+        <nav class="flex items-center justify-between">
+            <a class="text-base md:text-2xl font-medium text-blue-700 mr-auto" href="/">Elegant Goodies</a>
+            <ul class="hidden lg:flex space-x-16 text-gray-500">
+                <li class="relative">
+                    <button class="flex items-center font-medium" type="button" @click="toggleThemes"
+                        @keydown.escape="closeThemes" aria-label="Notifications" aria-haspopup="true">
+                        Themes
+                        <svg class="ml-2" width="16" height="16" viewbox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.6667 6L8.00004 10.6667L3.33337 6" stroke="#6B7280" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <template x-if="isThemesOpen">
+                        <ul x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0" @click.away="closeThemes" @keydown.escape="closeThemes"
+                            class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700">
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>Dashboards</span>
+                                </a>
+                            </li>
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>Ecommerce</span>
+                                </a>
+                            </li>
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>News</span>
+                                </a>
+                            </li>
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>Landing pages</span>
+                                </a>
+                            </li>
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>Listing</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </template>
+                </li>
+                <li class="relative">
+                    <button class="flex items-center font-medium" type="button" @click="toggleTemplates"
+                        @keydown.escape="closeTemplates" aria-label="Notifications" aria-haspopup="true">
+                        Templates
+                        <svg class="ml-2" width="16" height="16" viewbox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.6667 6L8.00004 10.6667L3.33337 6" stroke="#6B7280" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <template x-if="isTemplatesOpen">
+                        <ul x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0" @click.away="closeTemplates"
+                            @keydown.escape="closeTemplates"
+                            class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700">
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>Dashboards</span>
+                                </a>
+                            </li>
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>Ecommerce</span>
+                                </a>
+                            </li>
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>News</span>
+                                </a>
+                            </li>
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>Landing pages</span>
+                                </a>
+                            </li>
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>Listing</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </template>
+                </li>
+                <li class="relative">
+                    <button class="flex items-center font-medium" type="button" @click="toggleSnippets"
+                        @keydown.escape="closeSnippets" aria-label="Notifications" aria-haspopup="true">
+                        Snippets
+                        <svg class="ml-2" width="16" height="16" viewbox="0 0 16 16" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.6667 6L8.00004 10.6667L3.33337 6" stroke="#6B7280" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <template x-if="isSnippetsOpen">
+                        <ul x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0" @click.away="closeSnippets"
+                            @keydown.escape="closeSnippets"
+                            class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700">
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>Messages</span>
+                                </a>
+                            </li>
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>Sales</span>
+                                </a>
+                            </li>
+                            <li class="flex">
+                                <a class="inline-flex items-center justify-between w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                    href="#">
+                                    <span>Alerts</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </template>
+                </li>
+            </ul>
+            <a class="btn bg-indigo-100 hover:bg-indigo-200 text-indigo-500 font-medium py-1 mr-4 px-4 rounded-full lg:ml-16 transition duration-300"
+                href="##">Hire us</a>
+            <!-- Mobile hamburger -->
+            <button class="p-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-purple"
+                @click="toggleSideMenu" aria-label="Menu">
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile sidebar -->
+        <!-- Backdrop -->
+        <div x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center">
+        </div>
+        <aside
+            class="fixed inset-y-0 z-20 left-0 flex-shrink-0 w-64 overflow-y-auto bg-white dark:bg-gray-800 lg:hidden"
+            x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
+            x-transition:enter-start="opacity-0 transform -translate-x-20" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0 transform -translate-x-20" @click.away="closeSideMenu"
+            @keydown.escape="closeSideMenu">
+            <div class="py-4 text-gray-500 dark:text-gray-400">
+                <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
+                    Elegant Goodies
+                </a>
+                <ul class="mt-6">
+                    <li class="relative px-6 py-3">
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                        <a class="w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                            href="index.html">
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="relative px-6 py-3">
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="toggleMobileThemes" aria-haspopup="true">
+                            <span>Themes</span>
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <template x-if="isMobileThemesOpen">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/login.html">Dashboards</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/create-account.html">
+                                        Ecommerce
+                                    </a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/forgot-password.html">
+                                        News
+                                    </a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/404.html"> Landing pages</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/blank.html">Listing</a>
+                                </li>
+                            </ul>
+                        </template>
+                    </li>
+                    <li class="relative px-6 py-3">
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="toggleMobileTemplates" aria-haspopup="true">
+                            <span>Templates</span>
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <template x-if="isMobileTemplatesOpen">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/login.html">Dashboards</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/create-account.html">
+                                        Ecommerce
+                                    </a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/forgot-password.html">
+                                        News
+                                    </a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/404.html"> Landing pages</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/blank.html">Listing</a>
+                                </li>
+                            </ul>
+                        </template>
+                    </li>
+                    <li class="relative px-6 py-3">
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="toggleMobileSnippets" aria-haspopup="true">
+                            <span>Snippets</span>
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewbox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <template x-if="isMobileSnippetsOpen">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/login.html">Dashboards</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/create-account.html">
+                                        Ecommerce
+                                    </a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/forgot-password.html">
+                                        News
+                                    </a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/404.html"> Landing pages</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="pages/blank.html">Listing</a>
+                                </li>
+                            </ul>
+                        </template>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <%-body%>
+
+        <!-- Featured -->
+        <section
+            class="flex flex-wrap justify-center lg:justify-around lg:flex-nowrap gap-6 my-10 lg:my-18 rounded-xl p-5 bg-blue-100">
+            <div class="featured-img pt-2 sm:pt-4 lg:pt-0">
+                <img src="/assets/img/elegant-dashboard.png" alt="">
+            </div>
+            <div class="lg:pt-8">
+                <span class="inline-block text-sm font-medium px-6 py-1 bg-teal-50 text-teal-500 rounded-full mb-4">
+                    Featured
+                </span>
+                <h2 class="font-bold text-3xl text-gray-800 mb-2">Elegant Dashboard Kit - CMS Dashboard Theme</h2>
+                <p class="text-xs text-gray-500 leading-4 font-normal mb-5">Design system to help you create beautiful
+                    dashboards & apps.
+                    Speed up your product development
+                    with code+design templates.</p>
+                <ul class="grid gap-y-4 mb-5 sm:grid-cols-3 justify-between text-gray-500">
+                    <li class="flex items-center gap-1 text-xs font-medium">
+                        <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L3.29289 10.7071C2.90237 10.3166 2.90237 9.68342 3.29289 9.29289C3.68342 8.90237 4.31658 8.90237 4.70711 9.29289L8 12.5858L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289Z"
+                                fill="#10B981" />
+                        </svg>
+                        Tailwind 2.2
+                    </li>
+                    <li class="flex items-center gap-1 text-xs font-medium">
+                        <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L3.29289 10.7071C2.90237 10.3166 2.90237 9.68342 3.29289 9.29289C3.68342 8.90237 4.31658 8.90237 4.70711 9.29289L8 12.5858L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289Z"
+                                fill="#10B981" />
+                        </svg>
+                        800+ Components
+                    </li>
+                    <li class="flex items-center gap-1 text-xs font-medium">
+                        <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L3.29289 10.7071C2.90237 10.3166 2.90237 9.68342 3.29289 9.29289C3.68342 8.90237 4.31658 8.90237 4.70711 9.29289L8 12.5858L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289Z"
+                                fill="#10B981" />
+                        </svg>
+                        10 Lightweight Plugins
+                    </li>
+                    <li class="flex items-center gap-1 text-xs font-medium">
+                        <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L3.29289 10.7071C2.90237 10.3166 2.90237 9.68342 3.29289 9.29289C3.68342 8.90237 4.31658 8.90237 4.70711 9.29289L8 12.5858L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289Z"
+                                fill="#10B981" />
+                        </svg>
+                        100% responsive
+                    </li>
+                    <li class="flex items-center gap-1 text-xs font-medium">
+                        <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L3.29289 10.7071C2.90237 10.3166 2.90237 9.68342 3.29289 9.29289C3.68342 8.90237 4.31658 8.90237 4.70711 9.29289L8 12.5858L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289Z"
+                                fill="#10B981" />
+                        </svg>
+                        21 Example Pages
+                    </li>
+                    <li class="flex items-center gap-1 text-xs font-medium">
+                        <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L3.29289 10.7071C2.90237 10.3166 2.90237 9.68342 3.29289 9.29289C3.68342 8.90237 4.31658 8.90237 4.70711 9.29289L8 12.5858L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289Z"
+                                fill="#10B981" />
+                        </svg>
+                        Well documented
+                    </li>
+                </ul>
+                <div><span class="text-gray-400">$36/</span><span class="text-3xl leading-9 font-normal">$29</span>
+                </div>
+            </div>
+        </section>
+        <!-- Subscribe -->
+        <section
+            class="subscribe--bg relative overflow-hidden grid md:grid-cols-2 items-center lg:justify-between rounded-xl mb-12 p-5 md:p-5 bg-blue-900 subscribe--height">
+            <p class="text-4xl text-white leading-10 font-medium text-center lg:text-left">Subscribe to be notified
+                quickly</p>
+            <div class="rounded-xl overflow-hidden lg:pl-20">
+                <div class="w-full p-3">
+                    <div class="relative">
+                        <input type="text"
+                            class="bg-white h-14 w-full px-4 pr-20 rounded-xl focus:outline-none hover:cursor-pointer"
+                            name="" placeholder="Enter e-mail address">
+                        <button class="h-10 rounded-xl bg-indigo-500 absolute top-2 text-sm right-2 px-5 text-white
+                            hover:bg-indigo-500">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="container mx-auto px-3 md:px-1 lg:px-12 pt-8 md:pt-20 pb-5">
+            <div class="grid md:grid-cols-6 text-center md:text-left gap-y-6 md:gap-y-0 mb-10">
+                <div class="md:col-span-2 px-5">
+                    <a class="inline-block mb-5 text-2xl font-medium text-white text-opacity-40" href="##">Elegant
+                        Goodies</a>
+                    <p class=" text-xs leading-4 text-gray-500">Beautifully designed Themes, Templates and practical
+                        Snippets. Save weeks of time and
+                        build your
+                        web-site interface in minutes.</p>
+                </div>
+                <div class="col px-2 text-xs">
+                    <span class="inline-block mb-3 uppercase leading-4 text-white">company</span>
+                    <ul class="text-gray-300 grid gap-y-1">
+                        <li><a href="##">About us</a></li>
+                        <li><a href="##">Privacy Policy</a></li>
+                        <li><a href="##">Terms and Conditions</a></li>
+                        <li><a href="##">Licenses</a></li>
+                    </ul>
+                </div>
+                <div class="col px-2 text-xs">
+                    <span class="inline-block mb-3 uppercase leading-4 text-white">resources</span>
+                    <ul class="text-gray-300 grid gap-y-1">
+                        <li><a href="##">Blog</a></li>
+                        <li><a href="##">Tailwind Resources</a></li>
+                        <li><a href="##">Bootstrap Resources</a></li>
+                        <li><a href="##">Figma Resources</a></li>
+                    </ul>
+                </div>
+                <div class="col px-2 text-xs">
+                    <span class="inline-block mb-3 uppercase leading-4 text-white">products</span>
+                    <ul class="text-gray-300 grid gap-y-1">
+                        <li><a href="##">Themes</a></li>
+                        <li><a href="##">Templates</a></li>
+                        <li><a href="##">Snippets</a></li>
+                        <li><a href="##">UI Kits</a></li>
+                    </ul>
+                </div>
+                <div class="col px-2 text-xs">
+                    <span class="inline-block mb-3 uppercase leading-4 text-white">services</span>
+                    <ul class="text-gray-300 grid gap-y-1">
+                        <li><a href="##">Custom Development</a></li>
+                        <li><a href="##">Custom Illustrations</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-xs leading-4 text-gray-400 text-center">Copyright © Digital Goodies 2021</p>
+        </div>
+    </footer>
+</body>
+
+</html>

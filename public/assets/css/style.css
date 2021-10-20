@@ -1,0 +1,172 @@
+.text-inter {
+	font-family: 'Inter';
+}
+
+.nav--padding {
+	padding-top: 25px;
+}
+
+@media (min-width: 640px) {
+	.nav--padding {
+		padding-top: 55px;
+	}
+}
+
+.bg-teal-50 {
+	background-color: #f0fdfa;
+}
+
+.text-teal-500 {
+	color: #14b8a6 !important;
+}
+
+@media (min-width: 768px) {
+	.lg\:my-18 {
+		margin-top: 4.7rem;
+		margin-bottom: 4.7rem;
+	}
+}
+
+.featured-img {
+	min-width: 497px;
+}
+
+@media (max-width: 1024px) {
+	.featured-img {
+		min-width: auto;
+	}
+}
+
+.subscribe--height {
+	min-height: 177px;
+}
+
+.subscribe--bg::before,
+.subscribe--bg::after {
+	content: '';
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.03);
+	width: 230px;
+	height: 230px;
+	border-radius: 50%;
+}
+
+.subscribe--bg::before {
+	left: 45%;
+	top: -150px;
+}
+
+.subscribe--bg::after {
+	bottom: -100px;
+	left: -50px;
+}
+.gap-x-3 {
+	column-gap: 0.75rem;
+}
+
+/* dropzone */
+.dropzone-wrapper {
+	cursor: pointer;
+	height: 150px;
+	border: 1px dashed #a0a3bd;
+	border-radius: 10px;
+	overflow-y: auto;
+}
+
+.dropzone .thumbnail {
+	margin-bottom: 10px;
+}
+
+.dz-error-message,
+.dz-success-mark,
+.dz-error-mark {
+	display: none;
+}
+.theme-dark .dz-preview {
+	background-color: rgba(26, 28, 35, 1);
+}
+.dz-preview {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	background-color: #fff;
+	width: 90%;
+	height: 90%;
+	z-index: 1;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 1.22;
+	letter-spacing: 0.75px;
+	color: rgba(158, 158, 158, 1);
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.dz-preview img {
+	width: 60px;
+	height: 60px;
+}
+
+.media-dropzone {
+	border-radius: 10px;
+}
+
+.media-dropzone .dropzone-wrapper {
+	background-color: transparent;
+}
+
+/* quill */
+.ql-editor {
+	border: 2px solid transparent;
+}
+.ql-editor:focus {
+	box-shadow: 0 0 0 3px rgb(202 191 253 / 45%);
+}
+.ql-toolbar {
+	border-top-left-radius: 0.25rem;
+	border-top-right-radius: 0.25rem;
+}
+.ql-editor.ql-blank::before {
+	font-style: normal !important;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	color: #24262d;
+	font-weight: 500;
+}
+
+.content-textarea .ql-editor {
+	min-height: 366px;
+}
+.content-textarea::before {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	color: red;
+}
+
+.content-textarea.ql-container {
+	border-radius: 0 0 8px 8px;
+	border-width: 0;
+}
+
+@media (min-width: 1024px) {
+	.lg\:grid-cols-3 {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+	.lg\:col-span-2 {
+		grid-column: span 2 / span 2;
+	}
+	.lg\:col-span-1 {
+		grid-column: span 1 / span 1;
+	}
+}
